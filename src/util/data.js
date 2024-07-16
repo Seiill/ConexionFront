@@ -45,5 +45,29 @@ export const services = [
     { "name": "Inicio", "path": "Hero" },
     { "name": "Servicios", "path": "servicios" },
     { "name": "Nosotros", "path": "nosotros" },
-    { "name": "Contacto", "path": "contacto" }
+    { "name": "Contácto", "path": "contacto" }
   ]
+
+  export const testimonialsData = [
+    {
+      id: 1,
+      title: "Salterra",
+      subtitle: "Yolanda Restrepo Jurado",
+      description: "La asesoría para mi emprendimiento fue excelente...",
+      imageKey: 'salterra',
+    },
+    {
+      id: 2,
+      title: "Empresa XYZ",
+      subtitle: "Carlos Pérez",
+      description: "El servicio al cliente es inigualable...",
+      imageKey: 'empresa-xyz',
+    },
+    {
+      id: 3,
+      title: "Negocio ABC",
+      subtitle: "Laura Martínez",
+      description: "Gracias a su asesoría, mi negocio ha crecido...",
+      imageKey: 'negocio-abc',
+    },
+  ];

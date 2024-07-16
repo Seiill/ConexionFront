@@ -4,9 +4,11 @@ import { Subtitle } from '../services/servicesStyle';
 import Icon1 from '../../assets/Benefit1.svg';
 import Icon3 from '../../assets/Benefit3.svg';
 import Icon4 from '../../assets/Benefit4.svg';
+import AnimateSection from '../../styles/styleComponents/AnimateSection';
 
 const Benefits = () => {
   return (
+    <AnimateSection>
     <Container>
       <BenefitsFlex className="split-70-30">
         <BenefitsCard className="left center">
@@ -37,6 +39,7 @@ const Benefits = () => {
         </BenefitsCard>
       </BenefitsFlex>
     </Container>
+    </AnimateSection>
   );
 };
 

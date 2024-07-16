@@ -2,8 +2,10 @@ import { Button, Container,  Description,  Image } from '../../styles/GlobalStyl
 import { Title, Wrapper, ImageWrapp, Subtitle, ServicesGrid, ServicesCard } from './servicesStyle'
 import Icon1 from '../../assets/ServicesImage.svg'
 import { services } from '../../util/data'
+import AnimateSection from '../../styles/styleComponents/AnimateSection'
 const Services = () => {
   return (
+    <AnimateSection>
     <Container id="servicios">
       <Wrapper>
         <Title>Nuestros servicios empresariales</Title>
@@ -22,6 +24,7 @@ const Services = () => {
         </ServicesGrid>
       </Wrapper>
     </Container>
+    </AnimateSection>
   )
 }
 

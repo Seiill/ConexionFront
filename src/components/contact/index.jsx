@@ -1,131 +1,141 @@
 import { useState } from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import theme from '../../styles/theme';
-import { Container } from '../../styles/GlobalStyles';
+import { Container, Button } from '../../styles/GlobalStyles';
+import { Formulario, Wrapp, LabelAnimate, InputWrapper, Input,Textarea } from './contactStyle';
+import AnimateSection from '../../styles/styleComponents/AnimateSection';
+
 const ContactUs = () => {
-    const [nombre, setNombre] = useState('');
-    const [correo, setCorreo] = useState('');
-    const [telefono, setTelefono] = useState('');
-    const [ciudad, setCiudad] = useState('');
-    const [mensaje, setMensaje] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Aquí podrías manejar la lógica para enviar el formulario
-        console.log('Formulario enviado');
+    const [formState, setFormState] = useState({
+      nombre: "",
+      correo: "",
+      telefono: "",
+      ciudad: "",
+      mensaje: "",
+    });
+  
+    const [focused, setFocused] = useState({
+      nombre: false,
+      correo: false,
+      telefono: false,
+      ciudad: false,
+      mensaje: false,
+    });
+  
+    const handleInputChange = (e) => {
+      const { id, value } = e.target;
+      setFormState({ ...formState, [id]: value });
     };
-
+  
+    const handleFocus = (id) => {
+      setFocused({ ...focused, [id]: true });
+    };
+  
+    const handleBlur = (id) => {
+      setFocused({ ...focused, [id]: false });
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log("Formulario enviado");
+    };
+  
     return (
+        <AnimateSection>
       <Container id="contacto">
         <Formulario onSubmit={handleSubmit}>
           <Wrapp>
-            <LabelAnimate htmlFor="nombre">Nombre</LabelAnimate>
-            <Input
+            <InputWrapper>
+              <LabelAnimate
+                htmlFor="nombre"
+                isFocused={focused.nombre || formState.nombre}
+              >
+                Nombre
+              </LabelAnimate>
+              <Input
                 type="text"
                 id="nombre"
-                value={nombre}
-                onChange={(e) => setNombre(e.target.value)}
+                value={formState.nombre}
+                onChange={handleInputChange}
+                onFocus={() => handleFocus("nombre")}
+                onBlur={() => handleBlur("nombre")}
                 required
-            />
-
-            <LabelAnimate htmlFor="correo">Correo</LabelAnimate>
-            <Input
+              />
+            </InputWrapper>
+  
+            <InputWrapper>
+              <LabelAnimate
+                htmlFor="correo"
+                isFocused={focused.correo || formState.correo}
+              >
+                Correo
+              </LabelAnimate>
+              <Input
                 type="email"
                 id="correo"
-                value={correo}
-                onChange={(e) => setCorreo(e.target.value)}
+                value={formState.correo}
+                onChange={handleInputChange}
+                onFocus={() => handleFocus("correo")}
+                onBlur={() => handleBlur("correo")}
                 required
-            />
-
-            <LabelAnimate htmlFor="telefono">Teléfono</LabelAnimate>
-            <Input
+              />
+            </InputWrapper>
+  
+            <InputWrapper>
+              <LabelAnimate
+                htmlFor="telefono"
+                isFocused={focused.telefono || formState.telefono}
+              >
+                Teléfono
+              </LabelAnimate>
+              <Input
                 type="tel"
                 id="telefono"
-                value={telefono}
-                onChange={(e) => setTelefono(e.target.value)}
-            />
-
-            <LabelAnimate htmlFor="ciudad">Ciudad</LabelAnimate>
-            <Input
+                value={formState.telefono}
+                onChange={handleInputChange}
+                onFocus={() => handleFocus("telefono")}
+                onBlur={() => handleBlur("telefono")}
+              />
+            </InputWrapper>
+  
+            <InputWrapper>
+              <LabelAnimate
+                htmlFor="ciudad"
+                isFocused={focused.ciudad || formState.ciudad}
+              >
+                Ciudad
+              </LabelAnimate>
+              <Input
                 type="text"
                 id="ciudad"
-                value={ciudad}
-                onChange={(e) => setCiudad(e.target.value)}
-            />
-
-            <LabelAnimate htmlFor="mensaje">Mensaje</LabelAnimate>
-            <Textarea
+                value={formState.ciudad}
+                onChange={handleInputChange}
+                onFocus={() => handleFocus("ciudad")}
+                onBlur={() => handleBlur("ciudad")}
+              />
+            </InputWrapper>
+  
+            <InputWrapper>
+              <LabelAnimate
+                htmlFor="mensaje"
+                isFocused={focused.mensaje || formState.mensaje}
+              >
+                Mensaje
+              </LabelAnimate>
+              <Textarea
                 id="mensaje"
-                value={mensaje}
-                onChange={(e) => setMensaje(e.target.value)}
+                value={formState.mensaje}
+                onChange={handleInputChange}
+                onFocus={() => handleFocus("mensaje")}
+                onBlur={() => handleBlur("mensaje")}
                 required
-            />
-
+              />
+            </InputWrapper>
+  
             <Button type="submit">Enviar</Button>
-            </Wrapp>
+          </Wrapp>
         </Formulario>
-        </Container>
+      </Container>
+      </AnimateSection>
     );
-};
-
-const Formulario = styled.form`
-    display: flex;
-    width: 100%;
-    height: 100vh;
-background-color: ${theme.colors.blue};
-color: ${theme.colors.primary};
- align-items: center;
-    justify-content: center;
-`;
-
-const LabelAnimate = styled(motion.label)`
-    display: block;
-    margin-bottom: 5px;
-    font-weight: ${theme.fontWeight.medium};
-`;
-
-const Input = styled.input`
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-`;
-
-const Textarea = styled.textarea`
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    resize: vertical;
-    min-height: 150px;
-`;
-const Wrapp = styled.div`
-width: 70%;
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    padding: 2rem;
-}
-`
-
-const Button = styled.button`
-    background-color: ${theme.colors.blue};
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-        background-color: #0056b3;
-    }
-`;
-
-export default ContactUs;
+  };
+  
+  export default ContactUs;

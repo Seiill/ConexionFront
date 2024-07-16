@@ -2,10 +2,12 @@
 import { Container, Description, Image } from '../../styles/GlobalStyles'
 import { Wrapper, ImageContainer, TextContainer, Subtitle, TextWrapp } from './aboutStyle'
 import Icon from '../../assets/aboutUs.svg'
+import AnimateSection from '../../styles/styleComponents/AnimateSection'
 
 
 const AboutUs = () => {
   return (
+    <AnimateSection>
     <Container id='nosotros'>
       <Wrapper>
         <ImageContainer>
@@ -27,6 +29,7 @@ const AboutUs = () => {
         </TextContainer>
       </Wrapper>
     </Container>
+    </AnimateSection>
   )
 }
 

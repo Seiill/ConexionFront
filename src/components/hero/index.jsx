@@ -2,8 +2,10 @@
 import { Button, Container, Description, Image, } from "../../styles/GlobalStyles";
 import { Wrapper, TextContainer, ImageContainer,  Title } from './heroStyle';
 import hero from '../../assets/HeroImage.svg'
+import AnimateSection from "../../styles/styleComponents/AnimateSection";
 const Hero = () => {
   return (
+    <AnimateSection>
     <Container id='Hero'>
       <Wrapper>
         <TextContainer>
@@ -16,6 +18,7 @@ const Hero = () => {
         </ImageContainer>
       </Wrapper>
     </Container>
+    </AnimateSection>
   )
 }
 

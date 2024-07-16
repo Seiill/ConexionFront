@@ -3,8 +3,10 @@ import { Wrapper, Subtitle, Wrapp, TextContainer, TextBox, Underline} from './tw
 import { Button, Container, Description, Image } from '../../styles/GlobalStyles'
 import consultoria from '../../assets/ConsultoriaSection.svg'
 import { dataConsult } from '../../util/data'
+import AnimateSection from '../../styles/styleComponents/AnimateSection'
 const Consultoria = () => {
   return (
+    <AnimateSection>
     <Container>
       <Wrapper>
         <Wrapp>
@@ -28,6 +30,7 @@ const Consultoria = () => {
       </Wrapper>
       
     </Container>
+    </AnimateSection>
   )
 }
 
