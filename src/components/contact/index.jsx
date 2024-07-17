@@ -1,45 +1,84 @@
 import { useState } from 'react';
 import { Container, Button } from '../../styles/GlobalStyles';
-import { Formulario, Wrapp, LabelAnimate, InputWrapper, Input,Textarea } from './contactStyle';
+import { Formulario, Wrapp, LabelAnimate, InputWrapper, Input, Textarea } from './contactStyle';
 import AnimateSection from '../../styles/styleComponents/AnimateSection';
 
 const ContactUs = () => {
-    const [formState, setFormState] = useState({
-      nombre: "",
-      correo: "",
-      telefono: "",
-      ciudad: "",
-      mensaje: "",
-    });
-  
-    const [focused, setFocused] = useState({
-      nombre: false,
-      correo: false,
-      telefono: false,
-      ciudad: false,
-      mensaje: false,
-    });
-  
-    const handleInputChange = (e) => {
-      const { id, value } = e.target;
-      setFormState({ ...formState, [id]: value });
-    };
-  
-    const handleFocus = (id) => {
-      setFocused({ ...focused, [id]: true });
-    };
-  
-    const handleBlur = (id) => {
-      setFocused({ ...focused, [id]: false });
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log("Formulario enviado");
-    };
-  
-    return (
-        <AnimateSection>
+  const [formState, setFormState] = useState({
+    nombre: "",
+    correo: "",
+    telefono: "",
+    ciudad: "",
+    mensaje: "",
+  });
+
+  const [focused, setFocused] = useState({
+    nombre: false,
+    correo: false,
+    telefono: false,
+    ciudad: false,
+    mensaje: false,
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormState({ ...formState, [id]: value });
+  };
+
+  const handleFocus = (id) => {
+    setFocused({ ...focused, [id]: true });
+  };
+
+  const handleBlur = (id) => {
+    setFocused({ ...focused, [id]: false });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+
+    if (!scriptUrl) {
+      console.error("La URL del script no está configurada");
+      alert("Hubo un problema con la configuración. Por favor, contacta al administrador.");
+      return;
+    }
+
+    try {
+      const formData = new FormData();
+      formData.append('nombre', formState.nombre);
+      formData.append('correo', formState.correo);
+      formData.append('telefono', formState.telefono);
+      formData.append('ciudad', formState.ciudad);
+      formData.append('mensaje', formState.mensaje);
+
+      const response = await fetch(scriptUrl, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        console.log("Formulario enviado");
+        alert("Formulario enviado con éxito");
+        setFormState({
+          nombre: "",
+          correo: "",
+          telefono: "",
+          ciudad: "",
+          mensaje: "",
+        });
+      } else {
+        console.error("Error al enviar el formulario");
+        alert("Hubo un problema al enviar el formulario. Por favor, inténtelo de nuevo.");
+      }
+    } catch (error) {
+      console.error("Error al enviar el formulario", error);
+      alert("Hubo un problema al enviar el formulario. Por favor, inténtelo de nuevo.");
+    }
+  };
+
+  return (
+    <AnimateSection>
       <Container id="contacto">
         <Formulario onSubmit={handleSubmit}>
           <Wrapp>
@@ -60,7 +99,7 @@ const ContactUs = () => {
                 required
               />
             </InputWrapper>
-  
+
             <InputWrapper>
               <LabelAnimate
                 htmlFor="correo"
@@ -78,7 +117,7 @@ const ContactUs = () => {
                 required
               />
             </InputWrapper>
-  
+
             <InputWrapper>
               <LabelAnimate
                 htmlFor="telefono"
@@ -95,7 +134,7 @@ const ContactUs = () => {
                 onBlur={() => handleBlur("telefono")}
               />
             </InputWrapper>
-  
+
             <InputWrapper>
               <LabelAnimate
                 htmlFor="ciudad"
@@ -112,7 +151,7 @@ const ContactUs = () => {
                 onBlur={() => handleBlur("ciudad")}
               />
             </InputWrapper>
-  
+
             <InputWrapper>
               <LabelAnimate
                 htmlFor="mensaje"
@@ -129,13 +168,13 @@ const ContactUs = () => {
                 required
               />
             </InputWrapper>
-  
+
             <Button type="submit">Enviar</Button>
           </Wrapp>
         </Formulario>
       </Container>
-      </AnimateSection>
-    );
-  };
-  
-  export default ContactUs;
+    </AnimateSection>
+  );
+};
+
+export default ContactUs;

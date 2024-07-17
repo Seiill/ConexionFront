@@ -53,7 +53,7 @@ export const services = [
       id: 1,
       title: "Salterra",
       subtitle: "Yolanda Restrepo Jurado",
-      description: "La asesoría para mi emprendimiento fue excelente...",
+      description: '"La asesoría para mi emprendimiento fue excelente. Me ayudaron con la inscripción en la Cámara de Comercio, el SENA y la creación de la marca. Definitivamente volvería a contratarlos "',
       imageKey: 'salterra',
     },
     {
