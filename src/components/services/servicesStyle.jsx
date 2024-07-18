@@ -4,6 +4,7 @@ import { mobile } from "../../util/responsive";
 
 export const Wrapper = styled.div`
 color: ${({ theme }) => theme.colors.primary};
+margin: 0 1rem;
 `
 export const Title = styled.h1`
 font-size: ${theme.fontSizes.xlarge};

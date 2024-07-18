@@ -169,7 +169,7 @@ const ContactUs = () => {
               />
             </InputWrapper>
 
-            <Button type="submit">Enviar</Button>
+            <Button $width='70%' type="submit">Enviar</Button>
           </Wrapp>
         </Formulario>
       </Container>

@@ -9,8 +9,8 @@ import Icon1 from '../../assets/Imagen salterra.jpg';
 
 const imageMap = {
   'salterra': Icon1,
-  'empresa-xyz': Icon1,
-  'negocio-abc': Icon1,
+  'Paseador Canino chinchina': Icon1,
+  'Pollolocura': Icon1,
 };
 
 

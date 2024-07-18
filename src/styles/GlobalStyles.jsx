@@ -37,7 +37,7 @@ font-weight: ${({ theme }) => theme.fontWeight.medium};
 padding: ${({ theme }) => theme.spacing.medium};
 border-radius: ${({ theme }) => theme.borderRadius};
 box-shadow: ${({ theme }) => theme.shadows.small};
-width: fit-content;
+width: ${({ $width }) => $width || 'fit-content'};
 cursor: pointer;
 &:hover {
   background-color: ${({ $hColor, theme }) => $hColor || theme.colors.hover};

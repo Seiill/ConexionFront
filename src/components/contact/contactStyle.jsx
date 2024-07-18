@@ -52,6 +52,7 @@ export const Textarea = styled.textarea`
 
 export const Wrapp = styled.div`
   width: 70%;
+  align-items: center;
   display: flex;
   margin: auto;
   flex-direction: column;

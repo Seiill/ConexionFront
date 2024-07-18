@@ -19,8 +19,14 @@ ${tablet({
     gap: '1rem',
 })}
 `
+export const WrapperDescription = styled.div`
+widht: fit-content;
+background-color: ${theme.colors.accent};
+padding: ${theme.spacing.xlarge};
+border-radius: 1rem;
+`
 export const Subtitle = styled.h2`
-font-size: ${theme.fontSizes.large};
+font-size: ${theme.fontSizes.xlarge};
 ${mobile({
     fontSize: `${theme.fontSizes.medium}`,
     TextWrapp: 'balance',

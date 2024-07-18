@@ -1,6 +1,7 @@
 import AboutUs from '../components/about'
 import Benefits from '../components/benfits'
 import ContactUs from '../components/contact'
+import Footer from '../components/footer'
 import Hero from '../components/hero'
 import Services from '../components/services'
 import Testimonials from '../components/testimonials'
@@ -16,6 +17,7 @@ const Home = () => {
     <Testimonials />
     <AboutUs />
     <ContactUs/>
+    <Footer/>
     </>
   )
 }

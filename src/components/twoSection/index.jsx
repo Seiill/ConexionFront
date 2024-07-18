@@ -1,5 +1,5 @@
 
-import { Wrapper, Subtitle, Wrapp, TextContainer, TextBox, Underline} from './twoSectionStyle'
+import { Wrapper, Subtitle, Wrapp, TextContainer, TextBox, Underline, WrapperDescription} from './twoSectionStyle'
 import { Button, Container, Description, Image } from '../../styles/GlobalStyles'
 import consultoria from '../../assets/ConsultoriaSection.svg'
 import { dataConsult } from '../../util/data'
@@ -10,7 +10,9 @@ const Consultoria = () => {
     <Container>
       <Wrapper>
         <Wrapp>
-        <Description  color='#e54525' fontWeight ='600'fontSize='1.5rem'>¿Entra dinero, pero no se ve? ¿No sabes en qué se gasta o adónde se va?</Description>
+          <WrapperDescription>
+        <Description  color='white' fontWeight ='600'fontSize='1.5rem'>¿Entra dinero, pero no se ve? ¿No sabes en qué se gasta o adónde se va?</Description>
+        </WrapperDescription>
         <Subtitle>Nuestra consultoría en dirección de empresas puede llevar tu PYME al siguiente nivel</Subtitle>
         <Button $hColor = '#05142B'$bgColor='#0F2A55'>Organiza y escala tu Empresa hoy!</Button>
         </Wrapp>

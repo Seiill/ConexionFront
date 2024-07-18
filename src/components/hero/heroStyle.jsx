@@ -2,6 +2,8 @@ import styled from "styled-components";
 import theme from "../../styles/theme";
 import { mobile, tablet } from "../../util/responsive";
 export const Wrapper =styled.div`
+position: realtive;
+top:70px;
 width: 100%;
 padding: 2rem 0;
 display: flex;
@@ -9,8 +11,7 @@ min-width: 300px;
 background-color: ${theme.colors.primary};
 ${tablet({
     flexDirection: 'column',
-    top: '60px',
-    position: 'relative',
+    
 })}
 `
 
@@ -45,7 +46,7 @@ ${tablet({
 })}
 `
 export const Title = styled.h1`
-font-size:${theme.fontSizes.xlarge} ;
+font-size:calc(${theme.fontSizes.xlarge} + 1rem);
 ${mobile({
     fontSize:`${theme.fontSizes.medium}`
 })}
