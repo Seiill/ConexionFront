@@ -5,12 +5,13 @@ import { Wrapper, Wrapp, TextContainer, ImageContainer, TitleTest, Subtitle, Des
 import AnimateSection from '../../styles/styleComponents/AnimateSection';
 import { testimonialsData } from '../../util/data';
 import Icon1 from '../../assets/Imagen salterra.jpg';
+import Icon2 from '../../assets/pollolocura.jpeg';
 
 
 const imageMap = {
   'salterra': Icon1,
   'Paseador Canino chinchina': Icon1,
-  'Pollolocura': Icon1,
+  'Pollolocura': Icon2,
 };
 
 

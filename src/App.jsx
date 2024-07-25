@@ -7,6 +7,7 @@ import Navbar from './components/navBar/NavBar';
 import Sidebar from './components/navBar/sidBar';
 import Home from './pages/home';
 import ScrollToTopButton from './styles/styleComponents/ScrollTopButton';
+import WhatsAppButton from './styles/styleComponents/whatsappButton';
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -22,6 +23,7 @@ function App() {
       <Navbar toggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
       <Home />
+      <WhatsAppButton></WhatsAppButton>
       <ScrollToTopButton />
     </ThemeProvider>
   );
