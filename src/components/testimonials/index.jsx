@@ -6,11 +6,11 @@ import AnimateSection from '../../styles/styleComponents/AnimateSection';
 import { testimonialsData } from '../../util/data';
 import Icon1 from '../../assets/Imagen salterra.jpg';
 import Icon2 from '../../assets/pollolocura.jpeg';
-
+import Icon3 from '../../assets/logo-paseadorcanino.svg';
 
 const imageMap = {
   'salterra': Icon1,
-  'Paseador Canino chinchina': Icon1,
+  'Paseador Canino chinchina': Icon3,
   'Pollolocura': Icon2,
 };
 
