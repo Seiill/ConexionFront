@@ -7,13 +7,13 @@ import Services from '../components/services'
 import Testimonials from '../components/testimonials'
 import Consultoria from '../components/twoSection'
 
-const Home = () => {
+const Home = ({scrollToSection}) => {
   return (
     <>
-    <Hero/>
-    <Consultoria />
-    <Services />
-    <Benefits/>
+    <Hero scrollToSection={scrollToSection}/>
+    <Consultoria scrollToSection={scrollToSection}/>
+    <Services scrollToSection={scrollToSection} />
+    <Benefits scrollToSection={scrollToSection}/>
     <Testimonials />
     <AboutUs />
     <ContactUs/>

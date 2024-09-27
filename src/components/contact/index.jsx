@@ -165,7 +165,8 @@ const ContactUs = () => {
                 onChange={handleInputChange}
                 onFocus={() => handleFocus("mensaje")}
                 onBlur={() => handleBlur("mensaje")}
-                required
+                placeholder="¡Hola! Necesito más información sobre las consultorías que ofrecen para mi empresa."
+               required
               />
             </InputWrapper>
 

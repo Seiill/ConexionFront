@@ -6,7 +6,7 @@ import Icon3 from '../../assets/Benefit3.svg';
 import Icon4 from '../../assets/Benefit4.svg';
 import AnimateSection from '../../styles/styleComponents/AnimateSection';
 
-const Benefits = () => {
+const Benefits = ({scrollToSection}) => {
   return (
     <AnimateSection>
     <Container>
@@ -32,7 +32,7 @@ const Benefits = () => {
             <Li>Medición de la productividad de tu equipo de trabajo.</Li>
             <Li>Mejorar la rentabilidad y las utilidades de tu pyme.</Li>
           </Ul>
-          <Button>¡Solicita tu asesoría gratuita ahora!</Button>
+          <Button  onClick={() => scrollToSection('contacto')}>¡Solicita tu asesoría gratuita ahora!</Button>
         </BenefitsCard>
         <BenefitsCard className="bottom">
           <Image src={Icon4} />

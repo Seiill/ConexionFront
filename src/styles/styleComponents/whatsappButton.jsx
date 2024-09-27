@@ -43,8 +43,8 @@ const WhatsAppButton = () => {
   };
 
   const openWhatsApp = () => {
-    const phoneNumber = '1234567890'; // Reemplaza con el número de teléfono real
-    const message = '¡Hola! Necesito más información.'; // Mensaje predefinido
+    const phoneNumber = '+573145597210'; 
+    const message = '¡Hola! Necesito más información sobre las consultorias que ofrecen para mi empresa.';
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };

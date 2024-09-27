@@ -3,7 +3,7 @@ import { Title, Wrapper, ImageWrapp, Subtitle, ServicesGrid, ServicesCard } from
 import Icon1 from '../../assets/ServicesImage.svg'
 import { services } from '../../util/data'
 import AnimateSection from '../../styles/styleComponents/AnimateSection'
-const Services = () => {
+const Services = ({ scrollToSection }) => {
   return (
     <AnimateSection>
     <Container id="servicios">
@@ -19,7 +19,7 @@ const Services = () => {
               <Description>{item.desc}</Description>
             </ServicesCard>))}
             <ServicesCard style={{justifyContent:'flex-end'}} key="button">
-            <Button style={{height: '60%',}}>Organiza y escala tu Empresa hoy!</Button>
+            <Button  onClick={() => scrollToSection('contacto')} style={{height: '60%',}}>Organiza y escala tu Empresa hoy!</Button>
           </ServicesCard>
         </ServicesGrid>
       </Wrapper>

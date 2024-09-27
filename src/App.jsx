@@ -15,6 +15,16 @@ function App() {
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
+    }
+  };
   
   return (
     <ThemeProvider theme={theme}>
@@ -22,7 +32,7 @@ function App() {
       <GlobalStyle />
       <Navbar toggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
-      <Home />
+      <Home scrollToSection={scrollToSection}/>
       <WhatsAppButton></WhatsAppButton>
       <ScrollToTopButton />
     </ThemeProvider>

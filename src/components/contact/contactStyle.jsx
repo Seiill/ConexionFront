@@ -17,14 +17,14 @@ export const LabelAnimate = styled(motion.label)`
   position: absolute;
   left: 10px;
   top: ${({ isFocused }) => (isFocused ? "-10px" : "10px")};
-  background-color: ${theme.colors.background};
+  background-color: ${({ isFocused, theme }) =>
+    isFocused ? theme.colors.blue : theme.colors.background};
   padding: 0 5px;
   transition: all 0.3s ease;
   pointer-events: none;
-  font-weight: ${theme.fontWeight.medium};
+  font-weight: ${({ theme }) => theme.fontWeight.medium};
   font-size: ${({ isFocused }) => (isFocused ? "12px" : "16px")};
 `;
-
 export const InputWrapper = styled.div`
   position: relative;
   width: 100%;
